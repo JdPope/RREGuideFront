@@ -20,7 +20,9 @@
 
 }
 .Navbar_logo a {
+  font-family: 'Signika', sans-serif;
   color: #FFA400;
+
   text-decoration: none;
   font-size: 2rem;
 }
@@ -28,13 +30,14 @@
   flex: 1;
 }
 .Navbar_items a{
-  color:#FFA400;
+  font-family: 'Poppins', sans-serif;
+  color:#000000;
   text-decoration: none;
 }
 
 .Navbar_items a:hover,
 .Navbar_items a:active {
-  color: #CBD2D0
+  color: #E2E9E5;
 }
 
 .Navbar_items ul{
