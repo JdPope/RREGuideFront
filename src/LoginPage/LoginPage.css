@@ -1,0 +1,28 @@
+#form {
+  display: inline;
+  position: fixed;
+  right: 0rem;
+  top: 0rem;
+  width: 10rem;
+  height: 8rem;
+  background-color: rgb(80, 80, 80, 1);
+  border-radius: 15px;
+  border: solid;
+  border-width: 2px;
+  border-color: rgb(200, 200, 200, 1);
+}
+
+#email-login, #password-login {
+  display: inline;
+  border-radius: 3px;
+  margin: 6.5px;
+}
+
+
+#error {
+  position: fixed;
+  right: 0.5rem;
+  top: 8rem;
+  color: red;
+  font-size: 1rem;
+}

@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
+import {BrowserRouter as Router, Route,Link } from 'react-router-dom'
 import Navbar from './Navbar/Navbar'
 import SideDrawer from './SideDrawer/SideDrawer'
+
 import Backdrop from './Backdrop/Backdrop'
-import LoginPage from './LoginPage'
+import LoginPage from './LoginPage/LoginPage'
+import SignUpContainer from './SignUpContainer/SignUpContainer'
 import './App.css'
-import {BrowserRouter as Router, Route,Link } from 'react-router-dom'
+
 
 class App extends Component {
   constructor(props){
@@ -43,6 +46,7 @@ backdropClickHandler = () => {
       {backdrop}
       <main style={{marginTop:'80px'}}>
       <Route exact path="/LoginPage" render={(props)=> <LoginPage /> }/>
+      <SignUpContainer/>
       </main>
     </div>
 
