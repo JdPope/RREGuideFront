@@ -15,12 +15,12 @@ class SignUpContainer extends Component {
                 <input className="SignUpContainer-input" name="first_name" />
                 <label className="SignUpContainer-label">Last Name:</label>
                 <input className="SignUpContainer-input" name="last_name"/>
-                <label className="SignUpContainer-label">Email:</label>
-                <input className="SignUpContainer-input" name="email"/>
+                <label className="SignUpContainer-label">User name:</label>
+                <input className="SignUpContainer-input" onChange={this.createUser} name="User Name" required placeholder= "User Name" type="text"  />
                 <label className="SignUpContainer-label">Password:</label>
                 <input className="SignUpContainer-input" type="password" name="password" />
               </form>
-              <button onClick={this.props.testUserCreate}>Create Test</button>
+              <button onClick={this.props.createUser}>Create Test</button>
             </div>
       </React.Fragment>
     )

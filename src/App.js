@@ -20,7 +20,7 @@ class App extends Component {
 }
 
 
-testUserCreate = () =>{
+createUser = () =>{
   console.log("create test")
   fetch('http://localhost:3000/users', {
     method: 'POST',
@@ -92,7 +92,7 @@ backdropClickHandler = () => {
       {backdrop}
       <main style={{marginTop:'80px'}}>
       <Route exact path="/LoginPage" render={(props)=> <LoginPage /> }/>
-      <SignUpContainer testUserCreate={this.testUserCreate}/>
+      <SignUpContainer createUser={this.createUser}/>
       <button onClick={this.testUserLogin}>Login Test</button>
       </main>
     </div>
