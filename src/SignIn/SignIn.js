@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import { BrowserRouter as Router,Link } from 'react-router-dom';
-import './SideDrawer.css'
+import './SignIn.css'
 
 class SideDrawer extends Component {
   constructor(props) {
@@ -31,22 +31,18 @@ class SideDrawer extends Component {
   render(props){
     const { username, password } = this.state
     return(
-    <nav className="side-drawer">
       <React.Fragment>
-            <div className="sid-drawer">
+            <div className="side-drawer">
               <form >
-
                 <label className="SignUpContainer-label">User name:</label>
                 <input className="SignUpContainer-input" name="username" required placeholder= "User Name" type="text"  />
                 <label className="SignUpContainer-label">Password:</label>
                 <input className="SignUpContainer-input"  name="password" required placeholder= "Password" type="password"  />
               </form>
-              <button className="signupbutton" >Sign Up!</button>
+              <button className="signupbutton" >Sign In!</button>
+              <button onClick={this.props.testUserLogin}>Login Test</button>
             </div>
       </React.Fragment>
-    </nav>
-
-
 
   )
 }

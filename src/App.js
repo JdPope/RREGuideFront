@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {BrowserRouter as Router, Route,Link } from 'react-router-dom'
 import Navbar from './Navbar/Navbar'
-import SideDrawer from './SideDrawer/SideDrawer'
+import SignIn from './SignIn/SignIn'
 
 import Backdrop from './Backdrop/Backdrop'
 import LoginPage from './LoginPage/LoginPage'
@@ -78,7 +78,7 @@ backdropClickHandler = () => {
   let backdrop;
 
   if (this.state.sideDrawerOpen){
-    sideDrawer = <SideDrawer/>
+    sideDrawer = <SignIn testUserLogin={this.testUserLogin}/>
     backdrop =   <Backdrop click={this.backdropClickHandler}/>
   }
 
@@ -93,7 +93,7 @@ backdropClickHandler = () => {
       <main style={{marginTop:'80px'}}>
       <Route exact path="/LoginPage" render={(props)=> <LoginPage /> }/>
       <SignUpContainer createUser={this.createUser}/>
-      <button onClick={this.testUserLogin}>Login Test</button>
+
       </main>
     </div>
 
