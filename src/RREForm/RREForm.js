@@ -30,6 +30,8 @@ class RREForm extends Component {
 
 
   render(props){
+    alert(localStorage.getItem('jwt'));
+
     const { username, password } = this.state
     return(
       <React.Fragment>

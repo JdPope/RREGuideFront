@@ -1,16 +1,28 @@
 import React, {Component} from 'react'
-import { BrowserRouter as Router,Link } from 'react-router-dom';
+import { BrowserRouter as Router,Link, Redirect} from 'react-router-dom';
 import './SignIn.css'
 
 class SideDrawer extends Component {
   constructor(props) {
     super(props)
     this.state = {
+      redirect: false,
       username: "",
       password: ""
     }
   }
-
+  setRedirect = (event) => {
+     this.setState({
+       redirect: true
+     })
+     this.renderRedirect()
+   }
+   renderRedirect = () => {
+     console.log("redirect")
+     if (this.state.redirect) {
+       return <Redirect to='/RREForm/RREForm' />
+     }
+   }
   handleChange = (event) => {
       const { name, value } = event.target
       this.setState({
@@ -31,11 +43,13 @@ class SideDrawer extends Component {
     return(
       <React.Fragment>
             <div className="side-drawer">
+            {this.renderRedirect()}
               <form >
                 <input className="SignUpContainer-input"onChange={this.handleChange} name="username" required placeholder= "User Name" type="text" value={username}/>
                 <input className="SignUpContainer-input"   onChange={this.handleChange} name="password" required placeholder= "Password" type="password" value={password} />
               </form>
               <button className="signupbutton" onClick={this.handleSubmit}>Sign In!</button>
+              <button className="signupbutton" onClick={(e) => {this.setRedirect(e)}}>Take Me to My Jobs!</button>
             </div>
       </React.Fragment>
 
