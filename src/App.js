@@ -54,9 +54,18 @@ testUserLogin = (username,password) =>{
   }).then(response => response.json())
   .then(response => {
     const token = response.token
-    console.log("r", response)
     localStorage.setItem("jwt", token)
     console.log("token", token)
+    fetch('http://localhost:3000/jobs',{
+      method: 'GET',
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`
+      }
+    }).then(response => response.json())
+    .then(response => {
+      console.log("we're looking", response)
+    })
   }).then(console.log("Login test complete"))
 }
 

@@ -11,7 +11,6 @@ class SideDrawer extends Component {
     }
   }
 
-
   handleChange = (event) => {
       const { name, value } = event.target
       this.setState({
