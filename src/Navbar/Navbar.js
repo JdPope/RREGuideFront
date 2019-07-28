@@ -17,7 +17,7 @@ return(
       <div className="Navbar_items">
 
         <ul>
-          <li><Link to={'/LoginPage'} className="nav-link">Sign In</Link></li>
+          <li className="nav-link" onClick={props.drawerClickHandler}>Sign In</li>
         </ul>
       </div>
     </nav>

@@ -29,14 +29,14 @@
 .spacer {
   flex: 1;
 }
-.Navbar_items a{
+.Navbar_items li{
   font-family: 'Poppins', sans-serif;
   color:#000000;
   text-decoration: none;
 }
 
-.Navbar_items a:hover,
-.Navbar_items a:active {
+.Navbar_items li:hover,
+.Navbar_items li:active {
   color: #FFFFFE;
 }
 

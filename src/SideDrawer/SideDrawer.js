@@ -1,27 +1,54 @@
-import React from 'react'
+import React, {Component} from 'react'
 import { BrowserRouter as Router,Link } from 'react-router-dom';
 import './SideDrawer.css'
 
-const SideDrawer = props => {
-  console.log("first", props)
-  return(
+class SideDrawer extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      username: "",
+      password: ""
+    }
+  }
+
+
+  handleChange = (event) => {
+      const { name, value } = event.target
+      this.setState({
+        [name]: value
+      })
+  }
+
+  handleSubmit = (event) => {
+      event.preventDefault()
+      console.log("handle submit")
+      const { username, password } = this.state
+      console.log(password)
+      this.props.createUser(username, password)
+    }
+
+
+  render(props){
+    const { username, password } = this.state
+    return(
     <nav className="side-drawer">
-      <ul>
-        <li><Link to={'/AddNewMarker'} className="nav-link">+New Marker</Link></li>
-        <li><a href="/">Filter by Candidate</a></li>
-        <li><a href="/">Candidate Bios</a></li>
-        <li><a href="/">Primary Races</a></li>
-        <li><a href="/">Gubernatorial Races</a></li>
-        <li><a href="/">Mayoral Races</a></li>
-        <li><a href="/">Convention Dates</a></li>
-        <li><a href="/">Dog Park Organizers</a></li>
-      </ul>
+      <React.Fragment>
+            <div className="sid-drawer">
+              <form >
+
+                <label className="SignUpContainer-label">User name:</label>
+                <input className="SignUpContainer-input" name="username" required placeholder= "User Name" type="text"  />
+                <label className="SignUpContainer-label">Password:</label>
+                <input className="SignUpContainer-input"  name="password" required placeholder= "Password" type="password"  />
+              </form>
+              <button className="signupbutton" >Sign Up!</button>
+            </div>
+      </React.Fragment>
     </nav>
 
 
 
   )
-  console.log("second", props)
 }
-
+}
 export default SideDrawer
