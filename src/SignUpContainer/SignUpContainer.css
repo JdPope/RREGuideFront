@@ -34,8 +34,19 @@ position: relative;
   font-family:'Libre Baskerville', serif;
   color: #000000;
   text-align: left;
-  font-size: 325%;
+  font-size: 315%;
   overflow-wrap: break-word;
+}
+
+.signupbutton{
+  margin-left: 1rem;
+  margin-right: 2rem;
+  border-radius: 5px;
+  background: #E2E9E5;
+  padding: .5rem 1rem;
+  font-family: 'Poppins', sans-serif;
+  color:#000000;
+  text-decoration: none;
 }
 textarea {
   width: 400px

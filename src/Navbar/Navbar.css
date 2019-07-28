@@ -16,7 +16,7 @@
   padding: 0 1rem;
 }
 .Navbar_logo {
-  margin-left: 1rem;
+  margin-left: 3rem;
 
 }
 .Navbar_logo a {
@@ -24,7 +24,7 @@
   color: #FFA400;
 
   text-decoration: none;
-  font-size: 2rem;
+  font-size: 2.4rem;
 }
 .spacer {
   flex: 1;
@@ -37,7 +37,7 @@
 
 .Navbar_items a:hover,
 .Navbar_items a:active {
-  color: #E2E9E5;
+  color: #FFFFFE;
 }
 
 .Navbar_items ul{
@@ -48,6 +48,9 @@
 }
 
 .Navbar_items li{
+  margin-left: 1rem;
+  margin-right: 2rem;
+  border-radius: 5px;
   background: #E2E9E5;
   padding: .5rem 1rem;
 }

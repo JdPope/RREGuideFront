@@ -20,7 +20,7 @@ class App extends Component {
 }
 
 
-createUser = () =>{
+createUser = (username,password) =>{
   console.log("create test")
   fetch('http://localhost:3000/users', {
     method: 'POST',
@@ -30,8 +30,8 @@ createUser = () =>{
     },
     body: JSON.stringify({
 
-        username: 'gal',
-        password: 'yo'
+        username: username,
+        password: password
 
     })
   })
