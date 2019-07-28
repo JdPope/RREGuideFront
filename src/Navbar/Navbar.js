@@ -9,7 +9,7 @@ return(
   <header className="Navbar">
     <nav className="Navbar_nav">
 
-      <div className="Navbar_logo"><a href="/">RRE G</a></div>
+      <div className="Navbar_logo"><a href="/">RRE Generator</a></div>
       <div className="spacer"/>
       <div>
         <ToggleButton click={props.drawerClickHandler}/>

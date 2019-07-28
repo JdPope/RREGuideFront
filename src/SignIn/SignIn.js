@@ -36,8 +36,7 @@ class SideDrawer extends Component {
                 <input className="SignUpContainer-input"onChange={this.handleChange} name="username" required placeholder= "User Name" type="text" value={username}/>
                 <input className="SignUpContainer-input"   onChange={this.handleChange} name="password" required placeholder= "Password" type="password" value={password} />
               </form>
-              <button className="signupbutton" >Sign In!</button>
-              <button onClick={this.handleSubmit}>Login Test</button>
+              <button className="signupbutton" onClick={this.handleSubmit}>Sign In!</button>
             </div>
       </React.Fragment>
 

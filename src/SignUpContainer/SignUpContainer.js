@@ -34,7 +34,7 @@ class SignUpContainer extends Component {
     return(
       <React.Fragment>
             <div className="SignUpContainer-main">
-              <div className="blerb">Role definition is hard...We're here to help.</div>
+              <div className="blerb">Job definition is hard...We're here to help.</div>
               <form >
                 <label className="SignUpContainer-label">First Name:</label>
                 <input className="SignUpContainer-input" name="first_name" required placeholder= "First Name"/>
