@@ -21,10 +21,9 @@ class SideDrawer extends Component {
 
   handleSubmit = (event) => {
       event.preventDefault()
-      console.log("handle submit")
       const { username, password } = this.state
       console.log(password)
-      this.props.createUser(username, password)
+      this.props.testUserLogin(username, password)
     }
 
 
@@ -34,13 +33,11 @@ class SideDrawer extends Component {
       <React.Fragment>
             <div className="side-drawer">
               <form >
-                <label className="SignUpContainer-label">User name:</label>
-                <input className="SignUpContainer-input" name="username" required placeholder= "User Name" type="text"  />
-                <label className="SignUpContainer-label">Password:</label>
-                <input className="SignUpContainer-input"  name="password" required placeholder= "Password" type="password"  />
+                <input className="SignUpContainer-input"onChange={this.handleChange} name="username" required placeholder= "User Name" type="text" value={username}/>
+                <input className="SignUpContainer-input"   onChange={this.handleChange} name="password" required placeholder= "Password" type="password" value={password} />
               </form>
               <button className="signupbutton" >Sign In!</button>
-              <button onClick={this.props.testUserLogin}>Login Test</button>
+              <button onClick={this.handleSubmit}>Login Test</button>
             </div>
       </React.Fragment>
 

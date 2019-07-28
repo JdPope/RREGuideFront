@@ -4,7 +4,6 @@ import Navbar from './Navbar/Navbar'
 import SignIn from './SignIn/SignIn'
 
 import Backdrop from './Backdrop/Backdrop'
-import LoginPage from './LoginPage/LoginPage'
 import SignUpContainer from './SignUpContainer/SignUpContainer'
 import './App.css'
 
@@ -39,8 +38,8 @@ createUser = (username,password) =>{
     .then(console.log("create test complete"))
 }
 
-testUserLogin = () =>{
-  console.log("login test")
+testUserLogin = (username,password) =>{
+  console.log("username", username, "password", password)
   const savedToken = localStorage.getItem("jwt")
   fetch('http://localhost:3000/login', {
     method: "POST",
@@ -49,8 +48,8 @@ testUserLogin = () =>{
       Authorization: `Bearer ${savedToken}`
     },
     body: JSON.stringify({
-      username: 'guy',
-      password: 'hi'
+      username: username,
+      password: password
     })
   }).then(response => response.json())
   .then(response => {
@@ -91,7 +90,6 @@ backdropClickHandler = () => {
       {sideDrawer}
       {backdrop}
       <main style={{marginTop:'80px'}}>
-      <Route exact path="/LoginPage" render={(props)=> <LoginPage /> }/>
       <SignUpContainer createUser={this.createUser}/>
 
       </main>
