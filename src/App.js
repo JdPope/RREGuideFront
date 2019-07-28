@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {BrowserRouter as Router, Route,Link } from 'react-router-dom'
 import Navbar from './Navbar/Navbar'
 import SignIn from './SignIn/SignIn'
+import RREForm from './RREForm/RREForm'
 
 import Backdrop from './Backdrop/Backdrop'
 import SignUpContainer from './SignUpContainer/SignUpContainer'
@@ -100,7 +101,6 @@ backdropClickHandler = () => {
       {backdrop}
       <main style={{marginTop:'80px'}}>
       <SignUpContainer createUser={this.createUser}/>
-
       </main>
     </div>
 
