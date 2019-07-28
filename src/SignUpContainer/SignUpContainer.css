@@ -47,6 +47,8 @@ position: relative;
   font-family: 'Poppins', sans-serif;
   color:#000000;
   text-decoration: none;
+  list-style: none;
+  display: flex;
 }
 textarea {
   width: 400px
