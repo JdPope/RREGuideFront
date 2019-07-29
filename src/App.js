@@ -7,7 +7,7 @@ import RREContainer from './RREContainer/RREContainer'
 import Backdrop from './Backdrop/Backdrop'
 import SignUpContainer from './SignUpContainer/SignUpContainer'
 import './App.css'
-
+import Hi from './hi'
 
 class App extends Component {
   constructor(props){
@@ -19,6 +19,12 @@ class App extends Component {
   }
 }
 
+componentDidUpdate(prevState) {
+  // Typical usage (don't forget to compare props):
+  if (this.state.jobs !== prevState.jobs && Object.keys(this.state.jobs).length > 3) {
+    console.log("updated")
+  }
+}
 
 createUser = (username,password) =>{
   console.log("create test")
@@ -65,7 +71,7 @@ testUserLogin = (username,password) =>{
       }
     }).then(response => response.json())
     .then(response => this.setState({jobs:[...this.state.jobs, response]})).then(res => console.log("this", this.state.jobs))
-  })
+ })
 }
 
 
@@ -91,16 +97,17 @@ backdropClickHandler = () => {
 
 console.log("state", this.state.jobs)
   return(
-    <Router className="color">
 
-    <div className="app" style={{color: 'purple'}}>
+    <Router className="color">
+//
+    <div className="app" >
       <Navbar drawerClickHandler={this.drawerToggleClickHandler}/>
       {sideDrawer}
       {backdrop}
       <main style={{marginTop:'80px'}}>
       <SignUpContainer createUser={this.createUser}/>
       {this.state.jobs.length > 0
-        ?<Route exact path="/RREContainer/RREContainer" render={(props)=> <RREContainer {...props} /> }/>
+        ?<Route exact path="/RREContainer/RREContainer" render={(props)=> <RREContainer {...props} jobs={this.state.jobs} /> }/>
         : null }
       </main>
     </div>

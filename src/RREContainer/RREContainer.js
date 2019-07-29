@@ -4,17 +4,19 @@ import './RREContainer.css'
 import RREItem from '../RREItem/RREItem'
 
 export default function RREContainer(props) {
-console.log("rre container props", props.jobs)
+console.log("keys.length", Object.keys(props.jobs).length)
 
-  const displayJobItems = props.jobs.map(job => {
+
+
+
+  const displayJobItems = props.jobs.map((job) => {
     return <RREItem key={job.id} job={job}/>
   })
 
 
-
     return(
       <React.Fragment>
-      <h4>hello</h4>
+        {displayJobItems}
       </React.Fragment>
 
   )
