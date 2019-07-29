@@ -101,7 +101,7 @@ backdropClickHandler = () => {
       {backdrop}
       <main style={{marginTop:'80px'}}>
       <SignUpContainer createUser={this.createUser}/>
-      <Route exact path="/RREForm/RREForm" render={(props)=> <RREForm {...props} /> }/>
+      <Route exact path="/RREContainer/RREContainer" render={(props)=> <RREForm {...props} /> }/>
       </main>
     </div>
 

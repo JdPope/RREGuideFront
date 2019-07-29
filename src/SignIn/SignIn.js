@@ -20,7 +20,7 @@ class SideDrawer extends Component {
    renderRedirect = () => {
      console.log("redirect")
      if (this.state.redirect) {
-       return <Redirect to='/RREForm/RREForm' />
+       return <Redirect to='/RREContainer/RREContainer' />
      }
    }
   handleChange = (event) => {
