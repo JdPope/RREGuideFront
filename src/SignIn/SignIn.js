@@ -18,7 +18,6 @@ class SideDrawer extends Component {
      this.renderRedirect()
    }
    renderRedirect = () => {
-     console.log("redirect", this.state.redirect)
      if (this.state.redirect) {
        return <Redirect to='/RREContainer/RREContainer' />
      }

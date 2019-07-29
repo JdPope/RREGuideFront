@@ -64,7 +64,7 @@ testUserLogin = (username,password) =>{
         Authorization: `Bearer ${token}`
       }
     }).then(response => response.json())
-    .then(response => this.setState({jobs:response})).then(res => console.log("this", this.state.jobs))
+    .then(response => this.setState({jobs:[...this.state.jobs, response]})).then(res => console.log("this", this.state.jobs))
   })
 }
 
@@ -100,7 +100,7 @@ console.log("state", this.state.jobs)
       <main style={{marginTop:'80px'}}>
       <SignUpContainer createUser={this.createUser}/>
       {this.state.jobs.length > 0
-        ?<RREContainer jobs={this.state.jobs}/>
+        ?<Route exact path="/RREContainer/RREContainer" render={(props)=> <RREContainer {...props} /> }/>
         : null }
       </main>
     </div>
