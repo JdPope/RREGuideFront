@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {BrowserRouter as Router, Route,Link } from 'react-router-dom'
 import Navbar from './Navbar/Navbar'
 import SignIn from './SignIn/SignIn'
-import RREForm from './RREForm/RREForm'
+import RREContainer from './RREContainer/RREContainer'
 
 import Backdrop from './Backdrop/Backdrop'
 import SignUpContainer from './SignUpContainer/SignUpContainer'
@@ -14,7 +14,7 @@ class App extends Component {
   super(props)
   this.state = {
     sideDrawerOpen: false,
-    markers: [],
+    jobs: [],
     currentId: -1
   }
 }
@@ -64,10 +64,8 @@ testUserLogin = (username,password) =>{
         Authorization: `Bearer ${token}`
       }
     }).then(response => response.json())
-    .then(response => {
-      console.log("we're looking", response)
-    })
-  }).then(console.log("Login test complete"))
+    .then(response => this.setState({jobs:response})).then(res => console.log("this", this.state.jobs))
+  })
 }
 
 
@@ -91,7 +89,7 @@ backdropClickHandler = () => {
     backdrop =   <Backdrop click={this.backdropClickHandler}/>
   }
 
-
+console.log("state", this.state.jobs)
   return(
     <Router className="color">
 
@@ -101,10 +99,11 @@ backdropClickHandler = () => {
       {backdrop}
       <main style={{marginTop:'80px'}}>
       <SignUpContainer createUser={this.createUser}/>
-      <Route exact path="/RREContainer/RREContainer" render={(props)=> <RREForm {...props} /> }/>
+      {this.state.jobs.length > 0
+        ?<RREContainer jobs={this.state.jobs}/>
+        : null }
       </main>
     </div>
-
     </Router>
   )
 }

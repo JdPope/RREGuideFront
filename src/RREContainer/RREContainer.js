@@ -1,24 +1,21 @@
 import React, {Component} from 'react'
 import { BrowserRouter as Router,Link } from 'react-router-dom';
 import './RREContainer.css'
-import RREItem from './RREItem/RREItem'
+import RREItem from '../RREItem/RREItem'
 
-class RREForm extends Component {
+export default function RREContainer(props) {
+console.log("rre container props", props.jobs)
 
   const displayJobItems = props.jobs.map(job => {
-      return <RREItem key={job.id} job={job}/>
-    })
+    return <RREItem key={job.id} job={job}/>
+  })
 
 
-  render(props){
 
     return(
       <React.Fragment>
-        {displayJobItems}
+      <h4>hello</h4>
       </React.Fragment>
 
   )
     }
-}
-
-export default RREForm
