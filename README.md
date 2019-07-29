@@ -1,4 +1,4 @@
-# Pee-sidential Race 2020 
+# RRE Guide
 - Users can enter their Dog into the 2020 Presidential Race by creating, editing, and deleting clickable “markers”
 
 
