@@ -20,7 +20,6 @@ class App extends Component {
 }
 
 componentDidUpdate(prevState) {
-  // Typical usage (don't forget to compare props):
   if (this.state.jobs !== prevState.jobs && Object.keys(this.state.jobs).length > 3) {
     console.log("updated")
   }
@@ -99,7 +98,6 @@ console.log("state", this.state.jobs)
   return(
 
     <Router className="color">
-//
     <div className="app" >
       <Navbar drawerClickHandler={this.drawerToggleClickHandler}/>
       {sideDrawer}

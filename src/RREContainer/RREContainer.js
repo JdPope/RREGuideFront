@@ -6,18 +6,16 @@ import RREItem from '../RREItem/RREItem'
 export default function RREContainer(props) {
 console.log("keys.length", Object.keys(props.jobs).length)
 
-
-
-
   const displayJobItems = props.jobs.map((job) => {
     return <RREItem key={job.id} job={job}/>
   })
 
 
+
     return(
-      <React.Fragment>
+      <div className="RRE">
         {displayJobItems}
-      </React.Fragment>
+      </div>
 
   )
     }
