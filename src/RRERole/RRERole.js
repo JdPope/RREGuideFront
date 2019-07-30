@@ -10,8 +10,7 @@ export default function RRERole (props){
 
   return (
     <React.Fragment>
-      <h2>Role</h2>
-      <h3>{props.role.role_name}</h3>
+      <h3>Role: {props.role.role_name} {props.role.role_percentage}</h3>
         {displayRespItems}
     </React.Fragment>
   )
