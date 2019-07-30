@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
-import {BrowserRouter as Router, Route,Link } from 'react-router-dom'
+import {BrowserRouter as Router, Route,Link, Redirect } from 'react-router-dom'
 import Navbar from './Navbar/Navbar'
 import SignIn from './SignIn/SignIn'
 import RREContainer from './RREContainer/RREContainer'
 import NewRREForm from './NewRREForm/NewRREForm'
 import Backdrop from './Backdrop/Backdrop'
 import SignUpContainer from './SignUpContainer/SignUpContainer'
+
 import './App.css'
 import Hi from './hi'
 
@@ -16,7 +17,8 @@ class App extends Component {
     sideDrawerOpen: false,
     jobs: [],
     home: true,
-    currentId: -1
+    currentId: -1,
+    signUpStatus: false
   }
 }
 
@@ -88,12 +90,26 @@ drawerToggleClickHandler = () =>{
   })
 }
 
+setSignUpStatus = (event) => {
+   this.setState({
+     signUpStatus: true
+   })
+   console.log(this.state.signUpStatus)
+ }
+
+
+
 backdropClickHandler = () => {
   this.setState({sideDrawerOpen: false})
 }
   render(){
   let sideDrawer;
   let backdrop;
+  let newRREForm
+
+  if (this.state.signUpStatus){
+    newRREForm = <NewRREForm/>
+  }
 
   if (this.state.sideDrawerOpen){
     sideDrawer = <SignIn testUserLogin={this.testUserLogin}/>
@@ -110,13 +126,14 @@ console.log("state", this.state.jobs)
       {backdrop}
       <main style={{marginTop:'80px'}}>
       {(this.state.home === true)
-        ? <SignUpContainer createUser={this.createUser} changeHome={this.changeHome}/>
+        ? <SignUpContainer createUser={this.createUser} changeHome={this.changeHome} setSignUpStatus={this.setSignUpStatus}/>
         : null
       }
       {this.state.jobs.length > 0
         ?<Route exact path="/RREContainer/RREContainer" render={(props)=> <RREContainer {...props} jobs={this.state.jobs} /> }/>
         : null }
         <Route exact path="/NewRREForm/NewRREForm" render={(props)=> <NewRREForm /> }/>
+        {newRREForm}
       </main>
     </div>
     </Router>

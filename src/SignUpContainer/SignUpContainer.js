@@ -8,8 +8,7 @@ class SignUpContainer extends Component {
     super(props)
     this.state = {
       username: "",
-      password: "",
-      redirect:false
+      password: ""
     }
   }
 
@@ -23,14 +22,10 @@ class SignUpContainer extends Component {
 
 
 
-    setRedirect = (event) => {
-       this.setState({
-         redirect: true
-       })
-       this.renderRedirect()
-     }
+
      renderRedirect = () => {
        console.log("redirect yeah")
+       console.log(this.state.signUpStatus)
        if (this.state.redirect) {
          return <Redirect to='/NewRREForm/NewRREForm' />
        }
@@ -61,7 +56,7 @@ class SignUpContainer extends Component {
                 <label className="SignUpContainer-label">Password:</label>
                 <input className="SignUpContainer-input" onChange={this.handleChange} name="password" required placeholder= "Password" type="password" value={password} />
               </form>
-              <button className="signupbutton" onClick={(e) => {this.handleSubmit(e);this.setRedirect(e)}}>Sign Up!</button>
+              <button className="signupbutton" onClick={(e) => {this.handleSubmit(e);this.props.setSignUpStatus(e)}}>Sign Up!</button>
             </div>
       </React.Fragment>
     )
