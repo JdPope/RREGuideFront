@@ -3,7 +3,7 @@ import RRERole from '../RRERole/RRERole'
 export default function RREItem (props){
 
 
-  const displayRoleItems = props.job.rre.role.map((role) => {
+  const displayRoleItems = props.job.rre.roles.map((role) => {
     return <RRERole key={role.id} role={role}/>
   })
 
