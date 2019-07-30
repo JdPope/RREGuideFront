@@ -22,6 +22,7 @@ class SideDrawer extends Component {
        return <Redirect to='/RREContainer/RREContainer' />
      }
    }
+
   handleChange = (event) => {
       const { name, value } = event.target
       this.setState({
@@ -48,6 +49,7 @@ class SideDrawer extends Component {
                 <input className="SignUpContainer-input"   onChange={this.handleChange} name="password" required placeholder= "Password" type="password" value={password} />
               </form>
               <button className="signupbutton" onClick={(e) => {this.handleSubmit(e);this.setRedirect(e)}}>Sign In!</button>
+
             </div>
       </React.Fragment>
 

@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import { BrowserRouter as Router,Link } from 'react-router-dom';
+import { BrowserRouter as Router,Link, Redirect } from 'react-router-dom';
 import './SignUpContainer.css'
 
 class SignUpContainer extends Component {
@@ -8,7 +8,8 @@ class SignUpContainer extends Component {
     super(props)
     this.state = {
       username: "",
-      password: ""
+      password: "",
+      redirect:false
     }
   }
 
@@ -20,15 +21,29 @@ class SignUpContainer extends Component {
       })
   }
 
-  handleSubmit = (event) => {
-      event.preventDefault()
-      console.log("handle submit")
-      const { username, password } = this.state
-      console.log(password)
-      this.props.createUser(username, password)
-      this.props.changeHome()
-    }
 
+
+    setRedirect = (event) => {
+       this.setState({
+         redirect: true
+       })
+       this.renderRedirect()
+     }
+     renderRedirect = () => {
+       console.log("redirect yeah")
+       if (this.state.redirect) {
+         return <Redirect to='/NewRREForm/NewRREForm' />
+       }
+     }
+
+     handleSubmit = (event) => {
+         event.preventDefault()
+         console.log("handle submit")
+         const { username, password } = this.state
+         console.log(password)
+         this.props.createUser(username, password)
+         this.props.changeHome()
+       }
 
   render(props){
     const { username, password } = this.state
@@ -46,7 +61,7 @@ class SignUpContainer extends Component {
                 <label className="SignUpContainer-label">Password:</label>
                 <input className="SignUpContainer-input" onChange={this.handleChange} name="password" required placeholder= "Password" type="password" value={password} />
               </form>
-              <button className="signupbutton" onClick={this.handleSubmit}>Sign Up!</button>
+              <button className="signupbutton" onClick={(e) => {this.handleSubmit(e);this.setRedirect(e)}}>Sign Up!</button>
             </div>
       </React.Fragment>
     )

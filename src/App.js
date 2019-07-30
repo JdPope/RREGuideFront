@@ -3,7 +3,7 @@ import {BrowserRouter as Router, Route,Link } from 'react-router-dom'
 import Navbar from './Navbar/Navbar'
 import SignIn from './SignIn/SignIn'
 import RREContainer from './RREContainer/RREContainer'
-
+import NewRREForm from './NewRREForm/NewRREForm'
 import Backdrop from './Backdrop/Backdrop'
 import SignUpContainer from './SignUpContainer/SignUpContainer'
 import './App.css'
@@ -116,6 +116,7 @@ console.log("state", this.state.jobs)
       {this.state.jobs.length > 0
         ?<Route exact path="/RREContainer/RREContainer" render={(props)=> <RREContainer {...props} jobs={this.state.jobs} /> }/>
         : null }
+        <Route exact path="/NewRREForm/NewRREForm" render={(props)=> <NewRREForm /> }/>
       </main>
     </div>
     </Router>
