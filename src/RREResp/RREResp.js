@@ -1,13 +1,17 @@
 import React from 'react'
+import RREExp from '../RREExp/RREExp'
 
 export default function RREResp (props){
 
+  const displayExpItems = props.resp.expectations.map((exp) => {
+      return <RREExp key={exp.expectation_id} exp={exp}/>
+    })
 
   return (
     <React.Fragment>
-      <h2>Responsibility</h2>
+      <h2>Responsibilities</h2>
       <h3>{props.resp.resp_name}</h3>
-  
+      {displayExpItems}
     </React.Fragment>
   )
 }
