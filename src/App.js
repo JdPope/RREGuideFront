@@ -15,6 +15,7 @@ class App extends Component {
   this.state = {
     sideDrawerOpen: false,
     jobs: [],
+    home: true,
     currentId: -1
   }
 }
@@ -45,6 +46,7 @@ createUser = (username,password) =>{
 }
 
 testUserLogin = (username,password) =>{
+  this.setState({home: false})
   console.log("username", username, "password", password)
   const savedToken = localStorage.getItem("jwt")
   fetch('http://localhost:3000/login', {
@@ -74,8 +76,6 @@ testUserLogin = (username,password) =>{
 }
 
 
-
-
 drawerToggleClickHandler = () =>{
   this.setState((prevState) => {
     return {sideDrawerOpen: !prevState.sideDrawerOpen}
@@ -103,7 +103,10 @@ console.log("state", this.state.jobs)
       {sideDrawer}
       {backdrop}
       <main style={{marginTop:'80px'}}>
-      <SignUpContainer createUser={this.createUser}/>
+      {(this.state.home === true)
+        ? <SignUpContainer createUser={this.createUser}/>
+        : null
+      }
       {this.state.jobs.length > 0
         ?<Route exact path="/RREContainer/RREContainer" render={(props)=> <RREContainer {...props} jobs={this.state.jobs} /> }/>
         : null }
