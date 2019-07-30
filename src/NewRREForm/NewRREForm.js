@@ -1,8 +1,8 @@
 import React, {Component} from 'react'
 import { BrowserRouter as Router,Link } from 'react-router-dom';
-import './SignUpContainer.css'
+import './NewRREForm.css'
 
-class SignUpContainer extends Component {
+class NewRREForm extends Component {
 
   constructor(props) {
     super(props)
@@ -26,7 +26,7 @@ class SignUpContainer extends Component {
       const { username, password } = this.state
       console.log(password)
       this.props.createUser(username, password)
-      this.props.changeHome()
+      this.setState({home: false})
     }
 
 
@@ -35,7 +35,7 @@ class SignUpContainer extends Component {
     return(
       <React.Fragment>
             <div className="SignUpContainer-main">
-              <div className="blerb">Job definition is hard...We're here to help.</div>
+              <div className="blerb">Make Job Definition Easy with RRE!</div>
               <form >
                 <label className="SignUpContainer-label">First Name:</label>
                 <input className="SignUpContainer-input" name="first_name" required placeholder= "First Name"/>
@@ -53,4 +53,4 @@ class SignUpContainer extends Component {
     }
 }
 
-export default SignUpContainer
+export default NewRREForm

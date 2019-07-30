@@ -20,6 +20,8 @@ class App extends Component {
   }
 }
 
+
+
 componentDidUpdate(prevState) {
   if (this.state.jobs !== prevState.jobs && Object.keys(this.state.jobs).length > 3) {
     console.log("updated")
@@ -76,6 +78,10 @@ testUserLogin = (username,password) =>{
 }
 
 
+changeHome = () =>{
+  this.setState({home:false})
+}
+
 drawerToggleClickHandler = () =>{
   this.setState((prevState) => {
     return {sideDrawerOpen: !prevState.sideDrawerOpen}
@@ -104,7 +110,7 @@ console.log("state", this.state.jobs)
       {backdrop}
       <main style={{marginTop:'80px'}}>
       {(this.state.home === true)
-        ? <SignUpContainer createUser={this.createUser}/>
+        ? <SignUpContainer createUser={this.createUser} changeHome={this.changeHome}/>
         : null
       }
       {this.state.jobs.length > 0
