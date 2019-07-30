@@ -8,7 +8,7 @@ import Backdrop from './Backdrop/Backdrop'
 import SignUpContainer from './SignUpContainer/SignUpContainer'
 
 import './App.css'
-import Hi from './hi'
+
 
 class App extends Component {
   constructor(props){

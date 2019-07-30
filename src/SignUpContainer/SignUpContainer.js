@@ -20,17 +20,6 @@ class SignUpContainer extends Component {
       })
   }
 
-
-
-
-     renderRedirect = () => {
-       console.log("redirect yeah")
-       console.log(this.state.signUpStatus)
-       if (this.state.redirect) {
-         return <Redirect to='/NewRREForm/NewRREForm' />
-       }
-     }
-
      handleSubmit = (event) => {
          event.preventDefault()
          console.log("handle submit")
