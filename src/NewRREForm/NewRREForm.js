@@ -18,14 +18,16 @@ class NewRREForm extends Component {
             <div className="SignUpContainer-main">
               <div className="blerb">Make Job Definition Easy with RRE!</div>
               <form >
-                <label className="SignUpContainer-label">First Name:</label>
-                <input className="SignUpContainer-input" name="first_name" required placeholder= "First Name"/>
-                <label className="SignUpContainer-label">Last Name:</label>
-                <input className="SignUpContainer-input" name="last_name" required placeholder= "Last Name"/>
-                <label className="SignUpContainer-label">User name:</label>
-                <input className="SignUpContainer-input"  name="username" required placeholder= "User Name" type="text"  />
-                <label className="SignUpContainer-label">Password:</label>
-                <input className="SignUpContainer-input"  name="password" required placeholder= "Password" type="password"  />
+                <label className="SignUpContainer-label">Job Title:</label>
+                <input className="SignUpContainer-input" name="job" required placeholder= "Job Title"/>
+                <label className="SignUpContainer-label">Role Name:</label>
+                <input className="SignUpContainer-input" name="role" required placeholder= "Role Name"/>
+                <label className="SignUpContainer-label">Percentage of Role:</label>
+                <input className="SignUpContainer-input"  name="role_percentage" required placeholder= "Role Percentage" type="text"  />
+                <label className="SignUpContainer-label">Responsibilities:</label>
+                <input className="SignUpContainer-input"  name="Responsibilities" required placeholder= "Responsibility" type="text"  />
+                <label className="SignUpContainer-label">Expectations:</label>
+                <input className="SignUpContainer-input"  name="expectations" required placeholder= "Expectation" type="text"/>
               </form>
               <button className="signupbutton" >Sign Up!</button>
             </div>
