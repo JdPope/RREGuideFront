@@ -34,7 +34,7 @@ class SignUpContainer extends Component {
     return(
       <React.Fragment>
             <div className="SignUpContainer-main">
-              <div className="blerb">Job definition is hard...We're here to help.</div>
+              <div className="blerb">Defining success is hard...We're here to help.</div>
               <div className="subdesc">Capture on the job knowledge to optimize performance and hiring with RRE Generator</div>
               <form >
                 <button className="google">Sign up with Google</button>

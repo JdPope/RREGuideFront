@@ -1,12 +1,12 @@
 import React from 'react'
+import './RREExp.css'
 
 export default function RREExp (props){
 
 
   return (
     <React.Fragment>
-      <h2>Expectations</h2>
-      <h3>{props.exp.expectation_name}</h3>
+      <li className="exp">{props.exp.expectation_name}</li>
 
     </React.Fragment>
   )
