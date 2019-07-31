@@ -45,10 +45,10 @@ class SideDrawer extends Component {
             <div className="side-drawer">
             {this.renderRedirect()}
               <form >
-                <input className="SignUpContainer-input"onChange={this.handleChange} name="username" required placeholder= "User Name" type="text" value={username}/>
-                <input className="SignUpContainer-input"   onChange={this.handleChange} name="password" required placeholder= "Password" type="password" value={password} />
+                <input className="SignIn1" onChange={this.handleChange} name="username" required placeholder= "User Name" type="text" value={username}/>
+                <input className="SignIn" onChange={this.handleChange} name="password" required placeholder= "Password" type="password" value={password} />
               </form>
-              <button className="signupbutton" onClick={(e) => {this.handleSubmit(e);this.setRedirect(e)}}>Sign In!</button>
+              <button className="signInButton" onClick={(e) => {this.handleSubmit(e);this.setRedirect(e)}}>Sign In!</button>
 
             </div>
       </React.Fragment>
