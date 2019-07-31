@@ -8,7 +8,7 @@ top: 80%;
 margin-left:5%;
 margin-top:5%;
 padding: 3rem 3rem;
-padding-bottom: 78px;
+padding-bottom: 53px;
 /* transform: translate(-50%, -50%); */
 border-radius: 20px;
 border-style: solid;
@@ -43,16 +43,17 @@ position: relative;
 }
 
 .signupbutton{
+  font-weight: bold;
   height:60px;
   width:560px;
-  margin-top: 1.5rem;
+  margin-top: 3rem;
   margin-left: .3rem;
   margin-right: 2rem;
   border-radius: 5px;
   background: #FFA400;
   opacity: 0.8;
   border-color:#FFA400;
-  padding: .5rem 15rem;
+  padding: .5rem 14.9rem;
   font-family: 'Poppins', sans-serif;
   font-size: 13px;
   color:#FFFFFE;
@@ -73,6 +74,7 @@ position: relative;
     padding: .5rem 13.9rem;
     font-family: 'Poppins', sans-serif;
     color:#000000;
+    font-weight: bold;
     text-decoration: none;
     list-style: none;
     display: flex;
