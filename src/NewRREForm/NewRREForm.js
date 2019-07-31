@@ -43,17 +43,28 @@ class NewRREForm extends Component {
     console.log(roles)
 
     let rreData = {
-      job_name:this.state.job_name,
-      rre: {roles:roles}
+      name:this.state.job_name,
+      rre: {roles:roles},
+      user_id: 1
     }
     console.log("rre data", rreData)
     // iterate over roles array, and add an empty 'resp' array to each
     // iterate over responsibities array, add an empty 'expectations' array to each
     // iterate over expectations array- then add the expectation to the expectations array in the responsibilities entry with the same resp_id
     // do the same for responsibilities adding to the roles' array
-
-
+    let token = localStorage.getItem('jwt')
+    console.log(token)
+    fetch('http://localhost:3000/jobs',{
+      method: 'POST',
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`
+      },
+      body: JSON.stringify(rreData)
+    }).then(response => response.json())
+    .then(response => console.log(response))
   }
+
   addRole = (event) => {
     this.setState({roles:[...this.state.roles, {role_id: this.state.roles.length}]})
 
