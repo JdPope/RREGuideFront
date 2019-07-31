@@ -19,7 +19,9 @@ class NewRREForm extends Component {
 
   }
 
-
+  addResponsibility = (role) => {
+    this.setState({responsibilities:[...this.state.responsibilities, {role_id:role, resp_id:this.state.responsibilities.length}]})
+  }
 
   listRoles = () => {
     this.state.roles.map((role) => {
@@ -48,14 +50,42 @@ class NewRREForm extends Component {
     })
   }
 
+  handleRespChange = (event) =>{
+    const { name, value } = event.target
+    let index = name.substring(5)
+    index = parseInt(index)
+    let resps = this.state.responsibilities
+    resps = resps.map((resp)=>{
+      if (resp.resp_id == index){
+        resp.resp_name = value
+      }
+      return resp
+    })
+    this.setState({
+      responsibilities:resps
+    })
+  }
+
+  makeRespList = (role) =>{
+    return this.state.responsibilities
+    .filter(
+      resp => resp.role_id == role.role_id
+    )
+    .map((resp) => {
+      return <li>
+      <input name={`resp_${resp.resp_id}`} onChange={this.handleRespChange} defaultValue={resp.resp_name}  placeholder={resp.resp_id}></input>
+      </li>
+    })
+  }
 
   render(props){
     const rolesList =
       this.state.roles.map((role) => {
-        const respList = makeRespList(role)
+        const respList = this.makeRespList(role)
         return <li>
         <input name={`role_${role.role_id}`} onChange={this.handleRoleChange} defaultValue={role.role_name}  placeholder={role.role_id}></input>
         <ul>
+          <li>Responsibilities<button onClick={(e) => {e.preventDefault();this.addResponsibility(role.role_id)}}>+Responsibility</button></li>
           {respList}
         </ul>
         </li>
