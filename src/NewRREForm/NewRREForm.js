@@ -14,7 +14,46 @@ class NewRREForm extends Component {
         expectations:[{resp_id:0, exp_id:0}]
     }
   }
+  prepareData = () =>{
+    let roles = this.state.roles
+    let resps = this.state.responsibilities
+    let exp = this.state.expectations
 
+    roles.forEach((role) =>{
+      role.responsibities = []
+    })
+
+    resps.forEach((resp) =>{
+      resp.expectations = []
+    })
+
+    exp.forEach((exp) =>{
+      let resp = resps.filter((resp) =>{
+        return resp.resp_id == exp.resp_id
+      })[0]
+      resp.expectations.push(exp)
+    })
+
+    resps.forEach((resp) =>{
+      let role = roles.filter((role) =>{
+        return role.role_id == resp.role_id
+      })[0]
+      role.responsibities.push(resp)
+    })
+    console.log(roles)
+
+    let rreData = {
+      job_name:this.state.job_name,
+      rre: {roles:roles}
+    }
+    console.log("rre data", rreData)
+    // iterate over roles array, and add an empty 'resp' array to each
+    // iterate over responsibities array, add an empty 'expectations' array to each
+    // iterate over expectations array- then add the expectation to the expectations array in the responsibilities entry with the same resp_id
+    // do the same for responsibilities adding to the roles' array
+
+
+  }
   addRole = (event) => {
     this.setState({roles:[...this.state.roles, {role_id: this.state.roles.length}]})
 
@@ -106,7 +145,7 @@ class NewRREForm extends Component {
                 <button onClick={(e) => {e.preventDefault();this.addRole(e)}}>+ Role</button>
 
               </form>
-              <button className="signupbutton" onClick={(e)=> console.log("chris state", this.state)} >Submit form!</button>
+              <button className="signupbutton" onClick={(e)=> this.prepareData()} >Submit form!</button>
             </div>
       </React.Fragment>
     )
