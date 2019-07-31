@@ -133,10 +133,13 @@ class NewRREForm extends Component {
       this.state.roles.map((role) => {
         const respList = this.makeRespList(role)
         return <li>
+        <label>Role:</label>
         <input name={`role_${role.role_id}`} onChange={this.handleRoleChange} defaultValue={role.role_name}  placeholder={role.role_id}></input>
         <ul>
-          <li>Responsibilities<button onClick={(e) => {e.preventDefault();this.addResponsibility(role.role_id)}}>+Responsibility</button></li>
+          <li>Responsibilities:
           {respList}
+          <button onClick={(e) => {e.preventDefault();this.addResponsibility(role.role_id)}}>+Responsibility</button>
+          </li>
         </ul>
         </li>
       })
@@ -145,16 +148,19 @@ class NewRREForm extends Component {
     return(
       <React.Fragment>
             <div className="NewRREContainer">
-              <div className="blerb">Make defining success easy with RRE-G!</div>
+              <div className="blerb">RRE-G:Define Success, Simply.</div>
+              <div className="desc">Clarify roles, responsibilities, and expectations to inform hiring, reduce task ambiguity, and optimize performance.  </div>
               <form >
+                <label>What is your job title?</label>
                 <input className="SignUpContainer-input" onChange={this.handleChange} name="job_name"  placeholder= "Job Title" type="text" defaultValue={job_name}/>
+                <p>description about what this is</p>
                 <ul>
                   {rolesList}
                 </ul>
                 <button onClick={(e) => {e.preventDefault();this.addRole(e)}}>+ Role</button>
 
               </form>
-              <button className="signupbutton" onClick={(e)=> this.prepareData()} >Submit form!</button>
+              <button className="signupbutton" onClick={(e)=> this.prepareData()} >Define Success</button>
             </div>
       </React.Fragment>
     )
