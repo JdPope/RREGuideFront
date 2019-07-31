@@ -144,10 +144,9 @@ class NewRREForm extends Component {
     const { job_name, expectation_name, resp_name, role_name, role_percentage} = this.state
     return(
       <React.Fragment>
-            <div className="SignUpContainer-main">
-              <div className="blerb">Make Role Definition Easy with RRE!</div>
+            <div className="NewRREContainer">
+              <div className="blerb">Make defining success easy with RRE-G!</div>
               <form >
-                <label className="SignUpContainer-label">Job Title:</label>
                 <input className="SignUpContainer-input" onChange={this.handleChange} name="job_name"  placeholder= "Job Title" type="text" defaultValue={job_name}/>
                 <ul>
                   {rolesList}
