@@ -1,5 +1,6 @@
 import React from 'react'
 import RREExp from '../RREExp/RREExp'
+import './RREResp'
 
 export default function RREResp (props){
   console.log("props of resp", props)
@@ -9,8 +10,8 @@ export default function RREResp (props){
 
   return (
     <React.Fragment>
-      <h2>Responsibilities</h2>
-      <h3>{props.resp.resp_name}</h3>
+      <h2 className="resp">Responsibilities</h2>
+      <h3 className="resp">{props.resp.resp_name}</h3>
         {displayExpItems}
     </React.Fragment>
   )

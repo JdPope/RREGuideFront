@@ -17,7 +17,6 @@ class App extends Component {
     sideDrawerOpen: false,
     jobs: [],
     home: true,
-    currentId: -1,
     signUpStatus: false
   }
 }
