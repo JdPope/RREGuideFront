@@ -20,7 +20,7 @@ class NewRREForm extends Component {
     let exp = this.state.expectations
 
     roles.forEach((role) =>{
-      role.responsibities = []
+      role.responsibilities = []
     })
 
     resps.forEach((resp) =>{
@@ -38,14 +38,14 @@ class NewRREForm extends Component {
       let role = roles.filter((role) =>{
         return role.role_id == resp.role_id
       })[0]
-      role.responsibities.push(resp)
+      role.responsibilities.push(resp)
     })
     console.log(roles)
 
     let rreData = {
       name:this.state.job_name,
       rre: {roles:roles},
-      user_id: 1
+      user_id: 13
     }
     console.log("rre data", rreData)
     // iterate over roles array, and add an empty 'resp' array to each
