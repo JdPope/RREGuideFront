@@ -44,8 +44,7 @@ class NewRREForm extends Component {
 
     let rreData = {
       name:this.state.job_name,
-      rre: {roles:roles},
-      user_id: 13
+      rre: {roles:roles}
     }
     console.log("rre data", rreData)
     // iterate over roles array, and add an empty 'resp' array to each
