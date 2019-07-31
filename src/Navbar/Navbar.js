@@ -10,10 +10,15 @@ return(
     <nav className="Navbar_nav">
 
       <div className="Navbar_logo"><a href="/">RRE Generator</a></div>
+      <div className="filler">Why RRE-G?</div>
+      <div className="filler">Pricing</div>
+      <div className="filler">Our Partners</div>
+      <div className="filler">Resources</div>
       <div className="spacer"/>
       <div>
-        <ToggleButton click={props.drawerClickHandler}/>
+
       </div>
+
       <div className="Navbar_items">
 
         <ul>

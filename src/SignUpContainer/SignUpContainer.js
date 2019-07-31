@@ -37,8 +37,7 @@ class SignUpContainer extends Component {
               <div className="blerb">Job definition is hard...We're here to help.</div>
               <div className="subdesc">Capture on the job knowledge to optimize performance and hiring with RRE Generator</div>
               <form >
-                <input className="SignUpContainer-input" name="first_name" required placeholder= "First Name"/>
-                <input className="SignUpContainer-input" name="last_name" required placeholder= "Last Name"/>
+                <button className="google">Sign up with Google</button>
                 <input className="SignUpContainer-input" onChange={this.handleChange} name="username" required placeholder= "User Name" type="text" value={username} />
                 <input className="SignUpContainer-input" onChange={this.handleChange} name="password" required placeholder= "Password" type="password" value={password} />
               </form>
