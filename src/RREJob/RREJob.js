@@ -1,6 +1,6 @@
 import React from 'react'
 import RRERole from '../RRERole/RRERole'
-
+import './RREJob.css'
 
 export default function RREItem (props){
 
@@ -11,7 +11,7 @@ console.log("what i want", props.job.rre.roles)
 
   return (
     <React.Fragment>
-      <h1>RRE: {props.job.name}</h1>
+      <h1 className="job">RRE: {props.job.name}</h1>
           {displayRoleItems}
     </React.Fragment>
   )

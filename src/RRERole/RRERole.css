@@ -1,3 +1,8 @@
 .role{
-  margin-left: 3rem
+text-align: left;
+  color: #000000;
+  font-family:'Libre Baskerville', serif;
+  font-size: 200%;
+  background: #E2E9E5;
+  opacity: 0.83;
 }

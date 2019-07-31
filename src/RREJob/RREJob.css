@@ -1,0 +1,10 @@
+.job{
+  padding-bottom: 30px;
+  width:auto;
+  font-family:'Libre Baskerville', serif;
+  color: #000000;
+  text-align: center;
+  font-size: 315%;
+  overflow-wrap: break-word;
+  opacity: 0.83;
+}
