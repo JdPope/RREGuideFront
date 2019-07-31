@@ -22,14 +22,18 @@ position: relative;
   display: block;
 }
 .SignUpContainer-input {
-  color: #FFA400;
+  font-family: 'Poppins', sans-serif;
+  color:#000000;
   display: flex;
-  width: 400px;
+  width:550px;
   text-align: center;
+  height:30px;
+  font-size:10pt;
+  padding-bottom: 5px;
 }
 
 .blerb {
-  padding-bottom: 115px;
+  padding-bottom: 30px;
   width:auto;
   font-family:'Libre Baskerville', serif;
   color: #000000;
@@ -39,10 +43,14 @@ position: relative;
 }
 
 .signupbutton{
-  margin-left: 1rem;
+  height:50px;
+  width:558px;
+  margin-left: .3rem;
   margin-right: 2rem;
   border-radius: 5px;
-  background: #E2E9E5;
+  background: #FFA400;
+  opacity: 0.7;
+  border-color:#FFA400;
   padding: .5rem 1rem;
   font-family: 'Poppins', sans-serif;
   color:#000000;
@@ -52,6 +60,14 @@ position: relative;
 }
 textarea {
   width: 400px
+}
+
+.subdesc {
+  font-family: 'Poppins', sans-serif;
+  color:#000000;
+  font-size: 125%;
+  padding-bottom: 30px;
+  text-decoration: none;
 }
 
 .SignUpContainer-button {

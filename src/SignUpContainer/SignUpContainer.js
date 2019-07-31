@@ -35,17 +35,14 @@ class SignUpContainer extends Component {
       <React.Fragment>
             <div className="SignUpContainer-main">
               <div className="blerb">Job definition is hard...We're here to help.</div>
+              <div className="subdesc">Capture on the job knowledge to optimize performance and hiring with RRE Generator</div>
               <form >
-                <label className="SignUpContainer-label">First Name:</label>
                 <input className="SignUpContainer-input" name="first_name" required placeholder= "First Name"/>
-                <label className="SignUpContainer-label">Last Name:</label>
                 <input className="SignUpContainer-input" name="last_name" required placeholder= "Last Name"/>
-                <label className="SignUpContainer-label">User name:</label>
                 <input className="SignUpContainer-input" onChange={this.handleChange} name="username" required placeholder= "User Name" type="text" value={username} />
-                <label className="SignUpContainer-label">Password:</label>
                 <input className="SignUpContainer-input" onChange={this.handleChange} name="password" required placeholder= "Password" type="password" value={password} />
               </form>
-              <button className="signupbutton" onClick={(e) => {this.handleSubmit(e);this.props.setSignUpStatus(e)}}>Sign Up!</button>
+              <button className="signupbutton" onClick={(e) => {this.handleSubmit(e);this.props.setSignUpStatus(e)}}>Get Started!</button>
             </div>
       </React.Fragment>
     )
