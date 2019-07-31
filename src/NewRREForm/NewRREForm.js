@@ -10,7 +10,8 @@ class NewRREForm extends Component {
       job_id:1,
       job_name:"",
         roles:[{role_id:0}],
-        responsibilities:[{resp_id:0, role_id:0}]
+        responsibilities:[{resp_id:0, role_id:0}],
+        expectations:[{resp_id:0, exp_id:0}]
     }
   }
 
