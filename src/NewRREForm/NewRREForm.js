@@ -11,7 +11,7 @@ class NewRREForm extends Component {
       job_name:"",
         roles:[{role_id:0}],
         responsibilities:[{resp_id:0, role_id:0}],
-        expectations:[{resp_id:0, exp_id:0}]
+        expectations:[{resp_id:0, expectation_id:0}]
     }
   }
   prepareData = () =>{
@@ -64,13 +64,11 @@ class NewRREForm extends Component {
     .then(response => console.log(response))
   }
 
-  addRole = (event) => {
-    this.setState({roles:[...this.state.roles, {role_id: this.state.roles.length}]})
-
-  }
-
-  addResponsibility = (role) => {
-    this.setState({responsibilities:[...this.state.responsibilities, {role_id:role, resp_id:this.state.responsibilities.length}]})
+  handleChange = (event) => {
+      const { name, value } = event.target
+      this.setState({
+        [name]: value
+      })
   }
 
   listRoles = () => {
@@ -80,11 +78,9 @@ class NewRREForm extends Component {
     })
   }
 
-  handleChange = (event) => {
-      const { name, value } = event.target
-      this.setState({
-        [name]: value
-      })
+  addRole = (event) => {
+    this.setState({roles:[...this.state.roles, {role_id: this.state.roles.length}]})
+
   }
 
   handleRoleChange = (event) =>{
@@ -98,6 +94,10 @@ class NewRREForm extends Component {
     this.setState({
       roles:roles
     })
+  }
+
+  addResponsibility = (role) => {
+    this.setState({responsibilities:[...this.state.responsibilities, {role_id:role, resp_id:this.state.responsibilities.length}]})
   }
 
   handleRespChange = (event) =>{
@@ -116,17 +116,59 @@ class NewRREForm extends Component {
     })
   }
 
+  addExp = (resp) =>{
+    this.setState({expectations:[...this.state.expectations, {resp_id:resp, expectation_id:this.state.expectations.length}]})
+  }
+
+  handleExpChange = (event) =>{
+    const { name, value} = event.target
+    let index = name.substring(5)
+    index = parseInt(index)
+    let exps = this.state.expectations
+    exps = exps.map((exp)=>{
+      if (exp.expectation_id == index){
+        exp.expectation_name = value
+      }
+      return exp
+    })
+    this.setState({
+      expectations:exps
+    })
+  }
+
+  makeExpList = (resp) =>{
+    return this.state.expectations
+    .filter(
+      exp => exp.resp_id == resp.resp_id
+    )
+    .map((exp)=>{
+      return <li>
+      <input className="SignUpContainer-input" name={`expectation ${exp.expectation_id}`} onChange={this.handleExpChange} defaultValue={exp.expectation_name} placeholder={exp.expectation_id+1}></input>
+      </li>
+    })
+  }
+
+
   makeRespList = (role) =>{
     return this.state.responsibilities
     .filter(
       resp => resp.role_id == role.role_id
     )
     .map((resp) => {
+      const expList = this.makeExpList(resp)
       return <li>
       <input className="SignUpContainer-input" name={`resp_${resp.resp_id}`} onChange={this.handleRespChange} defaultValue={resp.resp_name}  placeholder={resp.resp_id+1}></input>
+
+      <ul>
+        <li>Expectations:
+        {expList}
+        <button onClick={(e)=> {e.preventDefault();this.addExp(resp.resp_id)}}>+Expectation</button>
+        </li>
+      </ul>
       </li>
     })
   }
+
 
   render(props){
     const rolesList =
