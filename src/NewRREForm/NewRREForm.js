@@ -47,10 +47,6 @@ class NewRREForm extends Component {
       rre: {roles:roles}
     }
     console.log("rre data", rreData)
-    // iterate over roles array, and add an empty 'resp' array to each
-    // iterate over responsibities array, add an empty 'expectations' array to each
-    // iterate over expectations array- then add the expectation to the expectations array in the responsibilities entry with the same resp_id
-    // do the same for responsibilities adding to the roles' array
     let token = localStorage.getItem('jwt')
     console.log(token)
     fetch('http://localhost:3000/jobs',{
@@ -122,7 +118,7 @@ class NewRREForm extends Component {
 
   handleExpChange = (event) =>{
     const { name, value} = event.target
-    let index = name.substring(5)
+    let index = name.substring(12)
     index = parseInt(index)
     let exps = this.state.expectations
     exps = exps.map((exp)=>{
@@ -143,7 +139,7 @@ class NewRREForm extends Component {
     )
     .map((exp)=>{
       return <li>
-      <input className="SignUpContainer-input" name={`expectation ${exp.expectation_id}`} onChange={this.handleExpChange} defaultValue={exp.expectation_name} placeholder={exp.expectation_id+1}></input>
+      <input className="SignUpContainer-input" name={`expectation_${exp.expectation_id}`} onChange={this.handleExpChange} defaultValue={exp.expectation_name} placeholder={exp.expectation_id+1}></input>
       </li>
     })
   }
