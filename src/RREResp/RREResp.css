@@ -3,15 +3,16 @@
 .resp{
   margin-left: 7rem;
   color: #000000;
-  font-family:'Libre Baskerville', serif;
+  font-family: 'Poppins', sans-serif;
   font-size: 185%;
   opacity: 0.83;
+  text-decoration: underline;
 }
 
 .exp{
   margin-left: 9rem;
   color: #000000;
-  font-family:'Libre Baskerville', serif;
+  font-family: 'Poppins', sans-serif;
   font-size: 175%;
   opacity: 0.83;
 }

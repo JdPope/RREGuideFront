@@ -140,7 +140,7 @@ class NewRREForm extends Component {
     .map((exp)=>{
       return <li>
 
-      <input className="SignUpContainer-input" name={`expectation_${exp.expectation_id}`} onChange={this.handleExpChange} defaultValue={exp.expectation_name} placeholder={exp.expectation_id+1}></input>
+      <input className="SignUpContainer-input" name={`expectation_${exp.expectation_id}`} onChange={this.handleExpChange} defaultValue={exp.expectation_name} placeholder={`Expectation ${exp.expectation_id+1}`}></input>
       </li>
     })
   }
@@ -154,7 +154,7 @@ class NewRREForm extends Component {
     .map((resp) => {
       const expList = this.makeExpList(resp)
       return <li>
-      <input className="SignUpContainer-input" name={`resp_${resp.resp_id}`} onChange={this.handleRespChange} defaultValue={resp.resp_name}  placeholder={resp.resp_id+1}></input>
+      <input className="SignUpContainer-input" name={`resp_${resp.resp_id}`} onChange={this.handleRespChange} defaultValue={resp.resp_name}  placeholder={`Responsibility ${resp.resp_id+1}`}></input>
 
       <ul>
         <p>Expectations should always be clear, specific, and whenever possible, measurable</p>
@@ -174,7 +174,7 @@ class NewRREForm extends Component {
         const respList = this.makeRespList(role)
         return <li>
         <label>Role:</label>
-        <input className="SignUpContainer-input" name={`role_${role.role_id}`} onChange={this.handleRoleChange} defaultValue={role.role_name}  placeholder={role.role_id+1}></input>
+        <input className="SignUpContainer-input" name={`role_${role.role_id}`} onChange={this.handleRoleChange} defaultValue={role.role_name}  placeholder={`Role ${role.role_id+1}`}></input>
         <p>Each role has an associated bundle of responsibilities. These responsibilities clearly define the products, services, assets or processes for which we are accountable</p>
         <ul>
           <li>Responsibilities:

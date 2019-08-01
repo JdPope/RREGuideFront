@@ -10,8 +10,7 @@ export default function RREResp (props){
 
   return (
     <React.Fragment>
-      <h2 className="resp">Responsibility: {props.resp.resp_name}</h2>
-      <h3 className="exp">Expectations:</h3>
+      <h3 className="resp">{props.resp.resp_name}</h3>
         {displayExpItems}
     </React.Fragment>
   )
