@@ -8,7 +8,7 @@
 [Click here for the demo!]
 
 ## Screenshots 📷
- ![Alt text](../fullsizeoutput_1.png?raw=true "login")
+ ![Alt text](./screenshots/screenshot1.png?raw=true "login")
 
 # Built with 🔧
 
