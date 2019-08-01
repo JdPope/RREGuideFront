@@ -123,7 +123,7 @@ class NewRREForm extends Component {
     )
     .map((resp) => {
       return <li>
-      <input name={`resp_${resp.resp_id}`} onChange={this.handleRespChange} defaultValue={resp.resp_name}  placeholder={resp.resp_id}></input>
+      <input className="SignUpContainer-input" name={`resp_${resp.resp_id}`} onChange={this.handleRespChange} defaultValue={resp.resp_name}  placeholder={resp.resp_id+1}></input>
       </li>
     })
   }
@@ -134,7 +134,8 @@ class NewRREForm extends Component {
         const respList = this.makeRespList(role)
         return <li>
         <label>Role:</label>
-        <input name={`role_${role.role_id}`} onChange={this.handleRoleChange} defaultValue={role.role_name}  placeholder={role.role_id}></input>
+        <input className="SignUpContainer-input" name={`role_${role.role_id}`} onChange={this.handleRoleChange} defaultValue={role.role_name}  placeholder={role.role_id+1}></input>
+        <p>“Each role has an associated bundle of responsibilities. These responsibilities clearly define the products, services, assets or processes for which we are accountable”</p>
         <ul>
           <li>Responsibilities:
           {respList}
@@ -153,14 +154,14 @@ class NewRREForm extends Component {
               <form >
                 <label>What is your job title?</label>
                 <input className="SignUpContainer-input" onChange={this.handleChange} name="job_name"  placeholder= "Job Title" type="text" defaultValue={job_name}/>
-                <p>description about what this is</p>
+                <p>“A role is a description of the position held and the functions performed by an individual”</p>
                 <ul>
                   {rolesList}
                 </ul>
-                <button onClick={(e) => {e.preventDefault();this.addRole(e)}}>+ Role</button>
+                <button className="rolebutton" onClick={(e) => {e.preventDefault();this.addRole(e)}}>+ Role</button>
 
               </form>
-              <button className="signupbutton" onClick={(e)=> this.prepareData()} >Define Success</button>
+              <button className="newRREbutton" onClick={(e)=> this.prepareData()}>Success!</button>
             </div>
       </React.Fragment>
     )

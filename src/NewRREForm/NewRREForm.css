@@ -45,14 +45,21 @@ position: relative;
   padding-bottom: 40px;
   text-decoration: none;
 }
-.signupbutton{
-  margin-left: 1rem;
+.newRREbutton{
+  font-weight: bold;
+  height:60px;
+  width:850px;
+  margin-top: 3rem;
+  margin-left: .3rem;
   margin-right: 2rem;
   border-radius: 5px;
-  background: #E2E9E5;
-  padding: .5rem 1rem;
+  background: #FFA400;
+  opacity: 0.8;
+  border-color:transparent;
+  padding: .5rem 14.9rem;
   font-family: 'Poppins', sans-serif;
-  color:#000000;
+  font-size: 13px;
+  color:#FFFFFE;
   text-decoration: none;
   list-style: none;
   display: flex;
@@ -71,4 +78,8 @@ input, textarea {
 
   padding: 3px;
   margin: 5px;
+}
+
+.rolebutton{
+
 }
