@@ -157,7 +157,7 @@ class NewRREForm extends Component {
       <input className="SignUpContainer-input" name={`resp_${resp.resp_id}`} onChange={this.handleRespChange} defaultValue={resp.resp_name}  placeholder={resp.resp_id+1}></input>
 
       <ul>
-        <p>“Expectations should always be clear, specific, and whenever possible, measurable”</p>
+        <p>Expectations should always be clear, specific, and whenever possible, measurable</p>
         <li>Expectations:
         {expList}
         <button onClick={(e)=> {e.preventDefault();this.addExp(resp.resp_id)}}>+Expectation</button>
@@ -175,7 +175,7 @@ class NewRREForm extends Component {
         return <li>
         <label>Role:</label>
         <input className="SignUpContainer-input" name={`role_${role.role_id}`} onChange={this.handleRoleChange} defaultValue={role.role_name}  placeholder={role.role_id+1}></input>
-        <p>“Each role has an associated bundle of responsibilities. These responsibilities clearly define the products, services, assets or processes for which we are accountable”</p>
+        <p>Each role has an associated bundle of responsibilities. These responsibilities clearly define the products, services, assets or processes for which we are accountable</p>
         <ul>
           <li>Responsibilities:
           {respList}
@@ -194,7 +194,7 @@ class NewRREForm extends Component {
               <form >
                 <label>What is your job title?</label>
                 <input className="SignUpContainer-input" onChange={this.handleChange} name="job_name"  placeholder= "Job Title" type="text" defaultValue={job_name}/>
-                <p>“A role is a description of the position held and the functions performed by an individual”</p>
+                <p>A role is a description of the position held and the functions performed by an individual</p>
                 <ul>
                   {rolesList}
                 </ul>
