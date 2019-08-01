@@ -139,6 +139,7 @@ class NewRREForm extends Component {
     )
     .map((exp)=>{
       return <li>
+
       <input className="SignUpContainer-input" name={`expectation_${exp.expectation_id}`} onChange={this.handleExpChange} defaultValue={exp.expectation_name} placeholder={exp.expectation_id+1}></input>
       </li>
     })
@@ -156,6 +157,7 @@ class NewRREForm extends Component {
       <input className="SignUpContainer-input" name={`resp_${resp.resp_id}`} onChange={this.handleRespChange} defaultValue={resp.resp_name}  placeholder={resp.resp_id+1}></input>
 
       <ul>
+        <p>“Expectations should always be clear, specific, and whenever possible, measurable”</p>
         <li>Expectations:
         {expList}
         <button onClick={(e)=> {e.preventDefault();this.addExp(resp.resp_id)}}>+Expectation</button>
@@ -187,8 +189,8 @@ class NewRREForm extends Component {
     return(
       <React.Fragment>
             <div className="NewRREContainer">
-              <div className="blerb">RRE-G:Define Success, Simply.</div>
-              <div className="desc">Clarify roles, responsibilities, and expectations to inform hiring, reduce task ambiguity, and optimize performance.  </div>
+              <div className="blerb">RRE-G: Success Defined, Simply.</div>
+              <div className="desc">Clarify roles, responsibilities, and expectations to inform hiring, reduce work ambiguity, and optimize performance.  </div>
               <form >
                 <label>What is your job title?</label>
                 <input className="SignUpContainer-input" onChange={this.handleChange} name="job_name"  placeholder= "Job Title" type="text" defaultValue={job_name}/>
@@ -196,8 +198,7 @@ class NewRREForm extends Component {
                 <ul>
                   {rolesList}
                 </ul>
-                <button className="rolebutton" onClick={(e) => {e.preventDefault();this.addRole(e)}}>+ Role</button>
-
+                <button className="rolebutton" onClick={(e) => {e.preventDefault();this.addRole(e)}}>+Role</button>
               </form>
               <button className="newRREbutton" onClick={(e)=> this.prepareData()}>Success!</button>
             </div>
